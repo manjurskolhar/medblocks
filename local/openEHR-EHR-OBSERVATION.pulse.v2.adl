@@ -389,7 +389,7 @@ Concepts such as Target Heart Rate should be recorded in separate EVALUATION arc
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"367B17CB3B1709A6BDF8A32723647224">
+		["MD5-CAM-1.0.1"] = <"a77d2573599bc2188b1e56998efe06d4">
 		["build_uid"] = <"faf59c32-a8b5-4369-b7f0-578b834271d5">
 		["revision"] = <"2.0.4">
 	>
