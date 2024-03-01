@@ -56,7 +56,7 @@ V3 DCModels R1 I1 2010 Sep - Glasgow Coma Scale v0.75 [Internet]. Health Level S
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"e136b1c1d4a2723389997f26fe745e52">
+		["MD5-CAM-1.0.1"] = <"6d63af92d071cb005544e84d22547b8f">
 		["build_uid"] = <"5da99e4a-b0ec-4e87-b340-c83942fb65d2">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -70,35 +70,6 @@ definition
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {3..*; unordered} matches {
-									ELEMENT[at0008] matches {    -- Best motor response (M)
-										value matches {
-											1|[local::at0019],
-											2|[local::at0020],
-											3|[local::at0021],
-											4|[local::at0022],
-											5|[local::at0023],
-											6|[local::at0024]
-										}
-										null_flavour matches {
-											DV_CODED_TEXT matches {
-												defining_code matches {
-													[openehr::273]
-												}
-											}
-										}
-									}
-									ELEMENT[at0026] occurrences matches {0..1} matches {    -- Total score
-										value matches {
-											DV_COUNT matches {
-												magnitude matches {|3..15|}
-											}
-										}
-									}
-									ELEMENT[at0030] occurrences matches {0..1} matches {    -- EVM profile
-										value matches {
-											DV_TEXT matches {*}
-										}
-									}
 									ELEMENT[at0037] occurrences matches {0..*} matches {    -- Comment
 										value matches {
 											DV_TEXT matches {*}
@@ -154,45 +125,6 @@ ontology
 				["at0003"] = <
 					text = <"Tree">
 					description = <"@ internal @">
-				>
-				["at0008"] = <
-					text = <"Best motor response (M)">
-					description = <"Best motor response to test stimulus.">
-					comment = <"Most commonly, the score for motor response will be selected from one of the ordinal values, however if a response cannot be tested, for example if the subject of care cannot move their limbs due to injury or paralysis, then the \"Not Applicable\" null flavour should be recorded.">
-				>
-				["at0019"] = <
-					text = <"None">
-					description = <"No movement in arms/legs and no interfering factor. For example: paralysis.">
-				>
-				["at0020"] = <
-					text = <"Abnormal extension">
-					description = <"Decerebrate extension of arms and/or legs in response to stimuli. For example: extending arm at elbow.">
-				>
-				["at0021"] = <
-					text = <"Abnormal flexion">
-					description = <"Slow, decorticate flexion of arms and/or legs. For example: bends arm at elbow, but features predominantly abnormal.">
-				>
-				["at0022"] = <
-					text = <"Normal flexion">
-					description = <"Withdraws in response to pain. For example: flexion of wrist when supra-orbital pressure applied; pulls part of body away when nailbed pinched.">
-				>
-				["at0023"] = <
-					text = <"Localising">
-					description = <"Withdraws to touch. For example: brings hand above the clavicle when supra-orbital pressure is applied.">
-				>
-				["at0024"] = <
-					text = <"Child: obeys commands OR Infant: Moves spontaneously and purposefully">
-					description = <"Child follows verbal request for movement; Infant moves as expected.">
-				>
-				["at0026"] = <
-					text = <"Total score">
-					description = <"The sum of the ordinal scores recorded for each of the three component responses.">
-					comment = <"The Total Score may be derived as the sum of the three response data elements and, if so, should be validated by the clinical information system against the individual scores entered by the clinician to ensure there is no conflict or inconsistency. Do not report a total score when one or more components are not testable because the score will be artificially low - in this situation record the EVM profile.">
-				>
-				["at0030"] = <
-					text = <"EVM profile">
-					description = <"Alternative assessment to 'Total Score' where the Eye Verbal Motor profile is expressed as three discrete components.">
-					comment = <"The EMV Score may be automatically derived as a concatenation of the three response data elements and, if so, should be validated by the clinical information system against the individual scores entered by the clinician to ensure there is no conflict or inconsistency. The 'Not applicable' null flavour value should be recorded as 'NT', for 'not tested' as per http://www.glasgowcomascale.org/.">
 				>
 				["at0037"] = <
 					text = <"Comment">
