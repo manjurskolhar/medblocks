@@ -56,7 +56,7 @@ V3 DCModels R1 I1 2010 Sep - Glasgow Coma Scale v0.75 [Internet]. Health Level S
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"ce15cf1dfa3df8617d79ddc2f3bd7ebf">
+		["MD5-CAM-1.0.1"] = <"e136b1c1d4a2723389997f26fe745e52">
 		["build_uid"] = <"5da99e4a-b0ec-4e87-b340-c83942fb65d2">
 		["revision"] = <"0.0.1-alpha">
 	>
