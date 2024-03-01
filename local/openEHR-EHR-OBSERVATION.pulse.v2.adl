@@ -124,32 +124,17 @@ Nicht zur Dokumentation des Pulsdefizits verwenden - für diesen Zweck soll ein 
 
 Konzepte, wie die Zielherzfrequenz, sollen im Zusammenhang mit dessen Zielen und Trainingsbewertungen in separaten EVALUATION-Archetypen erfasst werden.">
 		>
-		["fi"] = <
-			language = <[ISO_639-1::fi]>
-			purpose = <"*To record details about the rate and associated attributes for a pulse or heart beat.(en)">
-			keywords = <"*rate(en)","*rhythm(en)","*beat(en)","*pulse(en)","*heart(en)","*vital(en)","*sign(en)">
-			use = <"*Use to record the presence or absence of a pulse or heart beat.
-
-In practice, the terms 'heart rate' and 'pulse rate' are often used interchangeably, although they may be measured at different body sites. This archetype allows either term to be used when the measurement site is not specified, to suit clinician preferences.
-
-Use to record the measurement of the pulse rate, or heart rate, observations about the associated pattern and character, and clinical interpretation of the findings.
-
-Measurements such as the maximum pulse or heart rate over an interval of time can be recorded using 'Maximum' event. Others point-in-time or interval events may be specified within a template or at run-time.
-
-In development of this archetype, there has been some tension around representation of the regularity of the pulse or heart beat. This archetype represents the relevant data points separately: firstly establishing 'Regular' vs 'Irregular' and then, if 'Irregular', further options of 'Regularly irregular' and 'Irregularly irregular'. In practice, clinical systems could offer users a combination of the values from the 'Regular?' and 'Irregular type' - for example, 'Regular', 'Regularly irregular' and 'Irregularly irregular' drawn from these two data elements. Data could be recorded against both data elements with the assumption that if one of the irregular types are selected, then the 'Irregular' value in the 'Regular?' data element is also automatically selected.
-
-In certain situations it is important to be very specific so that a rate observed at a peripheral body site, such as the radial artery, can be differentiated from the rate of the heart. To record a pulse deficit, record the measurements of the mechanical heart rate and a peripheral pulse rate in two instances of this archetype - the difference between these measurments is the pulse deficit. The actual pulse deficit will be recorded in a separate OBSERVATION archetype.(en)">
-			misuse = <"*Not to be used to record the R-R rate in the context of an Electrocardiograph report - use the OBSERVATION.ecg archetypefor this purpose.
-
-Not to be used to record other details of the full cardiovascular examination or assessment. Other specific CLUSTER archetypes will be used to record characteristics such as apex beat, murmurs and bruits, or auscultatory findings.
-
-In particular, this archetype is not intended to record the assessment of peripheral vascular disease, which requires documentation of the presence and strength of each peripheral pulse.  A specific CLUSTER archetype will be used to record the general findings on examination of peripheral pulses.  
-
-Not to be used to record fetal heart rate - use the OBSERVATION.fetal_heart archetype for this purpose.
-
-Not to be used to record the pulse deficit - use a specific OBSERVATION archetype for this purpose.
-
-Concepts such as Target Heart Rate should be recorded in separate EVALUATION archetypes related to goals and exercise assessment.(en)">
+		["ru"] = <
+			language = <[ISO_639-1::ru]>
+			purpose = <"Для записи информации о частоте  и ритме  сердцечных сокращений.">
+			keywords = <"ЧСС","ритм","сердечный ритм","частотат сердечных сокращений">
+			copyright = <"© openEHR Foundation">
+			use = <"Используется для записи измеренных характеристик, связанных с темпом и ритма сердца, в том числе простая констатация наличия сердечного ритма. Эти характеристики не регистрируются путем прямого наблюдения самого сердца, а подразумевают альтернативные источники, включая прямую аускультацию сердца или электрокардиограф, отражающий электрическую активность сердца.
+Частота и ритм сердечных сокращений  (или специализация этого архетипа - Пульс), как правило, регистрируются в качестве одного из компонентов жизненно важных признаков - включая кровяное давление, дыхание, температуру и оксиметрию. Для каждого из этих понятий существуют специальные архетипы. ">
+			misuse = <"Не следует использовать для записи выводов о измеряемых частоте и ритме сердечных сокращений. Такого рода заявления, как, например, пациент находится в состоянии фибрилляция предсердий или тахикардии, должны быть записаны в других специальных архетипах, относящихся к категории ОЦЕНКА.
+Не следует использовать для записи механической частоты сердечных сокращений, ритма и связанные с ними характеристик - это записывается используя специализацию этого архетипа - OBSERVATION.heart_rate-pulse.
+Не используется для записи другой информации обширной системы обследования или оценки сердечно-сосудистой системы. Другие специфические архетипы используются для записи таких характеристик, как верхушечный толчок, шумы, результаты аускультаци и т.д.
+Такие понятия, как максимальная или целевая частота сердечных сокращений, должны записываться в отдельных архетипах, предназначенных специально для осуществления оценки.">
 		>
 		["sv"] = <
 			language = <[ISO_639-1::sv]>
@@ -181,17 +166,32 @@ Ska inte användas för att registrera pulsdeficit. Till detta ska en särskild 
 Ska inte användas när hjärtfrekvens är ett behandlingsmål. Till det ändamålet ska EVALUATION-arketyper som är till för mål och värdering av träning användas.
 ">
 		>
-		["ru"] = <
-			language = <[ISO_639-1::ru]>
-			purpose = <"Для записи информации о частоте  и ритме  сердцечных сокращений.">
-			keywords = <"ЧСС","ритм","сердечный ритм","частотат сердечных сокращений">
-			copyright = <"© openEHR Foundation">
-			use = <"Используется для записи измеренных характеристик, связанных с темпом и ритма сердца, в том числе простая констатация наличия сердечного ритма. Эти характеристики не регистрируются путем прямого наблюдения самого сердца, а подразумевают альтернативные источники, включая прямую аускультацию сердца или электрокардиограф, отражающий электрическую активность сердца.
-Частота и ритм сердечных сокращений  (или специализация этого архетипа - Пульс), как правило, регистрируются в качестве одного из компонентов жизненно важных признаков - включая кровяное давление, дыхание, температуру и оксиметрию. Для каждого из этих понятий существуют специальные архетипы. ">
-			misuse = <"Не следует использовать для записи выводов о измеряемых частоте и ритме сердечных сокращений. Такого рода заявления, как, например, пациент находится в состоянии фибрилляция предсердий или тахикардии, должны быть записаны в других специальных архетипах, относящихся к категории ОЦЕНКА.
-Не следует использовать для записи механической частоты сердечных сокращений, ритма и связанные с ними характеристик - это записывается используя специализацию этого архетипа - OBSERVATION.heart_rate-pulse.
-Не используется для записи другой информации обширной системы обследования или оценки сердечно-сосудистой системы. Другие специфические архетипы используются для записи таких характеристик, как верхушечный толчок, шумы, результаты аускультаци и т.д.
-Такие понятия, как максимальная или целевая частота сердечных сокращений, должны записываться в отдельных архетипах, предназначенных специально для осуществления оценки.">
+		["fi"] = <
+			language = <[ISO_639-1::fi]>
+			purpose = <"*To record details about the rate and associated attributes for a pulse or heart beat.(en)">
+			keywords = <"*rate(en)","*rhythm(en)","*beat(en)","*pulse(en)","*heart(en)","*vital(en)","*sign(en)">
+			use = <"*Use to record the presence or absence of a pulse or heart beat.
+
+In practice, the terms 'heart rate' and 'pulse rate' are often used interchangeably, although they may be measured at different body sites. This archetype allows either term to be used when the measurement site is not specified, to suit clinician preferences.
+
+Use to record the measurement of the pulse rate, or heart rate, observations about the associated pattern and character, and clinical interpretation of the findings.
+
+Measurements such as the maximum pulse or heart rate over an interval of time can be recorded using 'Maximum' event. Others point-in-time or interval events may be specified within a template or at run-time.
+
+In development of this archetype, there has been some tension around representation of the regularity of the pulse or heart beat. This archetype represents the relevant data points separately: firstly establishing 'Regular' vs 'Irregular' and then, if 'Irregular', further options of 'Regularly irregular' and 'Irregularly irregular'. In practice, clinical systems could offer users a combination of the values from the 'Regular?' and 'Irregular type' - for example, 'Regular', 'Regularly irregular' and 'Irregularly irregular' drawn from these two data elements. Data could be recorded against both data elements with the assumption that if one of the irregular types are selected, then the 'Irregular' value in the 'Regular?' data element is also automatically selected.
+
+In certain situations it is important to be very specific so that a rate observed at a peripheral body site, such as the radial artery, can be differentiated from the rate of the heart. To record a pulse deficit, record the measurements of the mechanical heart rate and a peripheral pulse rate in two instances of this archetype - the difference between these measurments is the pulse deficit. The actual pulse deficit will be recorded in a separate OBSERVATION archetype.(en)">
+			misuse = <"*Not to be used to record the R-R rate in the context of an Electrocardiograph report - use the OBSERVATION.ecg archetypefor this purpose.
+
+Not to be used to record other details of the full cardiovascular examination or assessment. Other specific CLUSTER archetypes will be used to record characteristics such as apex beat, murmurs and bruits, or auscultatory findings.
+
+In particular, this archetype is not intended to record the assessment of peripheral vascular disease, which requires documentation of the presence and strength of each peripheral pulse.  A specific CLUSTER archetype will be used to record the general findings on examination of peripheral pulses.  
+
+Not to be used to record fetal heart rate - use the OBSERVATION.fetal_heart archetype for this purpose.
+
+Not to be used to record the pulse deficit - use a specific OBSERVATION archetype for this purpose.
+
+Concepts such as Target Heart Rate should be recorded in separate EVALUATION archetypes related to goals and exercise assessment.(en)">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
@@ -261,18 +261,6 @@ Conceitos como a Frequência Cardíaca-alvo devem ser registrados em arquétipos
 
 ">
 		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			purpose = <"لتسجيل تفاصيل حول معدل و نظم القلب.">
-			keywords = <"المعدل","معدل القلب","النظم">
-			copyright = <"© openEHR Foundation">
-			use = <"يستخدم لتسجيل الخصائص التي تم قياسها فيما يتعلق بمعدل و نظم القلب, بما في ذلك بيان بسيط حول وجود نبض و معدل ضربات القلب. و لا يتم استخدام هذه القراءات بالملاحظة المباشرة للقلب ذاته, و إنما يتنم استنباطها من مصادر بديلة تتضمن التسمع المباشر للقلب أو تخطيط كهربية القلب بما يعكس النشاط الكهربي للقلب.
-معدل و نظم القلب ( أو تخصيصهما إلى النبض) عادة ما يتم تسجيلهم على أنهم يمثلون واحدا من العلامات الحياتية – و التي تتكون من ضغط الدم, التنفس, درجة الحرارة, و قياس التأكسج. و يوجد نماذج إضافية مخصصة لكل نوع من هذه المفاهيم.">
-			misuse = <"لا يستخدم لتسجيل استنتاجات حول معدل و نظم القلب الذي تم قياسهما. و ينبغي تسجيل بيانات مثل (المريض يعاني من الرجفان الأذيني) أو (يعاني من تسرع ضربات القلب) في نماذج أخرى مخصصة و متعلقة بتقييم حالة المريض.
-لا تستخدم لتسجيل معدل القلب الميكانيكي, أو النظم أو الخصائص الأخرى – و يتم تسجيل ذلك باستخدام تخصيص لهذا النموذج يسمى ملاحظة. معدل القلب – النبض.
-لا يستخدم لتسجيل تفاصيل فحص أو تقييم أكثر شمولا للجهاز القلبي الوريدي. و يمكن أن تستخدم نماذج معينة أخرى لتسجيل خصائص مثل نبض قمة القلب, النفخات, و الموجودات عند التسمع, إلى آخره.
-المفاهيم الأخرى مثل أقصى معدل للقلب, أو معدل القلب المستهدف ينبغي أن يتم تسجيلها في نماذج أخرى متعلقة بتقييم المجهود.">
-		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record details about the rate and associated attributes for a pulse or heart beat.">
@@ -301,32 +289,17 @@ Not to be used to record the pulse deficit - use a specific OBSERVATION archetyp
 
 Concepts such as Target Heart Rate should be recorded in separate EVALUATION archetypes related to goals and exercise assessment.">
 		>
-		["nl"] = <
-			language = <[ISO_639-1::nl]>
-			purpose = <"Voor het vastleggen van de frequentie en andere eigenschappen van de pols of de hartslag.">
-			keywords = <"frequentie","ritme","slag","pols","hart","vitaal","teken">
-			use = <"Gebruik voor het vastleggen van de aanwezigheid of afwezigheid van een pols of hartslag.
-
-In de praktijk worden de termen hart frequentie and polsfrequentie vaak door elkaar gebruikt, hoewel ze op andere locaties op het lichaam gemeten kunnen worden. Dit archetype is bedoeld om gebruikt te worden voor beide termen en het element meetlocatie wordt gebruikt om ze te onderscheiden.
-
-Gebruik voor het vastleggen van een meting van de polsfrequentie of de hartfrequentie, observaties over het bijbehorende patroon, karakter en de klinische interpretatie van de bevindingen.
-
-Metingen zoals de maximale pols- of hartfrequentie gedurende een interval kunnen worden vastgelegd met behulp van 'maximum' gebeurtenis. Andere momenten of interval gebeurtenissen kunnen gespecificieerd worden in een template of terwijl de applicatie loopt.
-
-Tijdens de ontwikkeling van dit archetype is er spanning geweest rond het vastleggen van de regulariteit van de pols- of hartfreqeuntie. Dit archetype legt de relevante data apart vast: ten eerste door het vastleggen van 'regulair' of 'irregulair' en vervolgens, indien 'irregulair', de extra opties 'regelmatig irregulair' en 'onregelmatig irregulair'. In d praktijk kunnen klinische systemen een combinatie tonen aan de gebruiker van de waardes van de 'regulariteit' en 'irregulair type' - bijvoorbeeld, 'regulair', 'regemlatig irregulair' en 'onregelmatig irregulair' gekozen uit deze twee data elementen. Data kan vastgelegd worden in beide elementen onder de aanname dat wanneer een van de irregulaire types gekozen wordt, dat automatisch de waarde 'irregulair' wordt gekozen in het data element 'regulariteit'.
-
-In bepaalde situaties is het belangrijk om heel specifiek te zijn zodat de frequentie, geobserveerd aan een perifeer lichaamslocatie, zoals de arteria radialis, onderscheiden kan worden van de hartfrequentie. Om een polsdeficit vast te leggen, dient de meting van de mechanische hartfrequentie en een perifere hartfrequentie in twee aparte versies van dit archetype vastgelegd te worden - het verschil tussen deze metingen is het polsdeficit. Het daadwerkelijke polsdeficit wordt in een apart OBSERVATION archetype vastgelegd.">
-			misuse = <"Niet te gebruiken voor het vastleggen van de R-R frequentie in de context van een electrocardiogram verslag - gebruik voor dat doel het OBSERVATION.ecg archetype.
-
-Niet te gebruiken voor het vastleggen van andere details van een volledig cardiovasculair onderzoek of beoordeling. Andere specifieke CLUSTER archetypes worden gebruikt voor het vastleggen van eigenschappen als apexhartslag, geruizen en bevindingen bij auscultatie. 
-
-In het bijzonder, is dit archetype niet bedoeld voor het vastleggen van een beoordeling van perifere vaculaire ziekte, die verslaglegging vereisen van de aanwezigheid of kracht van elke individuele perifere pols. Een specifiek CLUSTER archetype wordt gebruikt voor het vastleggen van bevindingen bij onderzoek van de perifere hartslag.
-
-Niet te gebruiken voor het vastleggen van foetale hartfrequentie - gebruik voor dat doel het OBSERVATION.fetal_heart archetype.
-
-Niet te gebruiken voor het vastleggen van het polsdeficit - gebruik voor dat doel een specifiek OBSERVATION archetype.
-
-Concepten zoals streef hart frequentie dienen vastgelegd te worden in een apart EVALUATION archetype gerelateerd aan doelen en inspannings beoordeling.">
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل تفاصيل حول معدل و نظم القلب.">
+			keywords = <"المعدل","معدل القلب","النظم">
+			copyright = <"© openEHR Foundation">
+			use = <"يستخدم لتسجيل الخصائص التي تم قياسها فيما يتعلق بمعدل و نظم القلب, بما في ذلك بيان بسيط حول وجود نبض و معدل ضربات القلب. و لا يتم استخدام هذه القراءات بالملاحظة المباشرة للقلب ذاته, و إنما يتنم استنباطها من مصادر بديلة تتضمن التسمع المباشر للقلب أو تخطيط كهربية القلب بما يعكس النشاط الكهربي للقلب.
+معدل و نظم القلب ( أو تخصيصهما إلى النبض) عادة ما يتم تسجيلهم على أنهم يمثلون واحدا من العلامات الحياتية – و التي تتكون من ضغط الدم, التنفس, درجة الحرارة, و قياس التأكسج. و يوجد نماذج إضافية مخصصة لكل نوع من هذه المفاهيم.">
+			misuse = <"لا يستخدم لتسجيل استنتاجات حول معدل و نظم القلب الذي تم قياسهما. و ينبغي تسجيل بيانات مثل (المريض يعاني من الرجفان الأذيني) أو (يعاني من تسرع ضربات القلب) في نماذج أخرى مخصصة و متعلقة بتقييم حالة المريض.
+لا تستخدم لتسجيل معدل القلب الميكانيكي, أو النظم أو الخصائص الأخرى – و يتم تسجيل ذلك باستخدام تخصيص لهذا النموذج يسمى ملاحظة. معدل القلب – النبض.
+لا يستخدم لتسجيل تفاصيل فحص أو تقييم أكثر شمولا للجهاز القلبي الوريدي. و يمكن أن تستخدم نماذج معينة أخرى لتسجيل خصائص مثل نبض قمة القلب, النفخات, و الموجودات عند التسمع, إلى آخره.
+المفاهيم الأخرى مثل أقصى معدل للقلب, أو معدل القلب المستهدف ينبغي أن يتم تسجيلها في نماذج أخرى متعلقة بتقييم المجهود.">
 		>
 		["es"] = <
 			language = <[ISO_639-1::es]>
@@ -354,6 +327,33 @@ Este arquetipo no fue diseñado para el registro de la evaluación de enfermedad
 No debe ser utilizado para registrar la frecuencia cardiaca fetal, esto se registra en el arquetipo OBSERVATION.fetal_heart.
 
 Conceptos como la frecuencia cardiaca objetivo deben ser registrados en arquetipos EVALUATION relacionados a objetivos sobre signos vitales y ejercicio.">
+		>
+		["nl"] = <
+			language = <[ISO_639-1::nl]>
+			purpose = <"Voor het vastleggen van de frequentie en andere eigenschappen van de pols of de hartslag.">
+			keywords = <"frequentie","ritme","slag","pols","hart","vitaal","teken">
+			use = <"Gebruik voor het vastleggen van de aanwezigheid of afwezigheid van een pols of hartslag.
+
+In de praktijk worden de termen hart frequentie and polsfrequentie vaak door elkaar gebruikt, hoewel ze op andere locaties op het lichaam gemeten kunnen worden. Dit archetype is bedoeld om gebruikt te worden voor beide termen en het element meetlocatie wordt gebruikt om ze te onderscheiden.
+
+Gebruik voor het vastleggen van een meting van de polsfrequentie of de hartfrequentie, observaties over het bijbehorende patroon, karakter en de klinische interpretatie van de bevindingen.
+
+Metingen zoals de maximale pols- of hartfrequentie gedurende een interval kunnen worden vastgelegd met behulp van 'maximum' gebeurtenis. Andere momenten of interval gebeurtenissen kunnen gespecificieerd worden in een template of terwijl de applicatie loopt.
+
+Tijdens de ontwikkeling van dit archetype is er spanning geweest rond het vastleggen van de regulariteit van de pols- of hartfreqeuntie. Dit archetype legt de relevante data apart vast: ten eerste door het vastleggen van 'regulair' of 'irregulair' en vervolgens, indien 'irregulair', de extra opties 'regelmatig irregulair' en 'onregelmatig irregulair'. In d praktijk kunnen klinische systemen een combinatie tonen aan de gebruiker van de waardes van de 'regulariteit' en 'irregulair type' - bijvoorbeeld, 'regulair', 'regemlatig irregulair' en 'onregelmatig irregulair' gekozen uit deze twee data elementen. Data kan vastgelegd worden in beide elementen onder de aanname dat wanneer een van de irregulaire types gekozen wordt, dat automatisch de waarde 'irregulair' wordt gekozen in het data element 'regulariteit'.
+
+In bepaalde situaties is het belangrijk om heel specifiek te zijn zodat de frequentie, geobserveerd aan een perifeer lichaamslocatie, zoals de arteria radialis, onderscheiden kan worden van de hartfrequentie. Om een polsdeficit vast te leggen, dient de meting van de mechanische hartfrequentie en een perifere hartfrequentie in twee aparte versies van dit archetype vastgelegd te worden - het verschil tussen deze metingen is het polsdeficit. Het daadwerkelijke polsdeficit wordt in een apart OBSERVATION archetype vastgelegd.">
+			misuse = <"Niet te gebruiken voor het vastleggen van de R-R frequentie in de context van een electrocardiogram verslag - gebruik voor dat doel het OBSERVATION.ecg archetype.
+
+Niet te gebruiken voor het vastleggen van andere details van een volledig cardiovasculair onderzoek of beoordeling. Andere specifieke CLUSTER archetypes worden gebruikt voor het vastleggen van eigenschappen als apexhartslag, geruizen en bevindingen bij auscultatie. 
+
+In het bijzonder, is dit archetype niet bedoeld voor het vastleggen van een beoordeling van perifere vaculaire ziekte, die verslaglegging vereisen van de aanwezigheid of kracht van elke individuele perifere pols. Een specifiek CLUSTER archetype wordt gebruikt voor het vastleggen van bevindingen bij onderzoek van de perifere hartslag.
+
+Niet te gebruiken voor het vastleggen van foetale hartfrequentie - gebruik voor dat doel het OBSERVATION.fetal_heart archetype.
+
+Niet te gebruiken voor het vastleggen van het polsdeficit - gebruik voor dat doel een specifiek OBSERVATION archetype.
+
+Concepten zoals streef hart frequentie dienen vastgelegd te worden in een apart EVALUATION archetype gerelateerd aan doelen en inspannings beoordeling.">
 		>
 		["es-co"] = <
 			language = <[ISO_639-1::es-co]>
@@ -389,7 +389,7 @@ Concepts such as Target Heart Rate should be recorded in separate EVALUATION arc
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"a77d2573599bc2188b1e56998efe06d4">
+		["MD5-CAM-1.0.1"] = <"b4afeb5a06ddc71b86dfe6e4f0eb02c3">
 		["build_uid"] = <"faf59c32-a8b5-4369-b7f0-578b834271d5">
 		["revision"] = <"2.0.4">
 	>
@@ -399,7 +399,7 @@ definition
 		data matches {
 			HISTORY[at0002] matches {    -- history
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0003] occurrences matches {0..*} matches {    -- Any event
+					EVENT[at0003] occurrences matches {0..1} matches {    -- Any event
 						data matches {
 							ITEM_TREE[at0001] matches {    -- structure
 								items cardinality matches {0..*; unordered} matches {
